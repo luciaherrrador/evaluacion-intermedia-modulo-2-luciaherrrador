@@ -1,0 +1,24 @@
+.page__main{
+    margin:0;
+    padding:0;
+    display:flex;
+    justify-content: space-between;
+    flex-direction:column;
+}
+
+.main__input{
+width: 20%;
+margin-bottom: 5px;
+}
+
+.btn{
+    width: 10%;
+    background-color: blue;
+    color: white;
+    
+}
+
+
+
+
+
