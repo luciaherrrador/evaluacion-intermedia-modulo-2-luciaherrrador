@@ -7,22 +7,21 @@ const counter = document.querySelector('.footer__counter');
 
 let attemps = 0;
 counter.innerHTML = `Número de intentos:${attemps}`;
-
+let myRandomNumber = getRandomNumber(100);
 
 function getRandomNumber(max) {
     return Math.ceil(Math.random() * max);
 }
-let myRandomNumber = getRandomNumber(100);
+
 console.log(myRandomNumber);
 
 
 function guessNumber() {
 
-    const inputNumber = parseInt(input.value);
+    const inputNumber = input.value;
     console.log(inputNumber);
 
-
-    if (inputNumber > myRandomNumber) {
+    /*if (inputNumber > myRandomNumber) {
         pageText.innerHTML = 'Demasiado alto';
     }
     else if (inputNumber < myRandomNumber) {
@@ -32,9 +31,21 @@ function guessNumber() {
         pageText.innerHTML = 'Has ganado campeona!!';
     }
     else {
-        pageText.innerHTML = 'El número debe estar entre cero y cien';
-    }
+        pageText.innerHTML = 'El número debe estar entre 1 y 100';
+    }*/
 
+    if (inputNumber > 100 || inputNumber === '' || inputNumber <= 0) {
+        pageText.innerHTML = 'El número debe estar entre 1 y 100';
+    }
+    else if (inputNumber > myRandomNumber) {
+        pageText.innerHTML = 'Demasiado alto';
+    }
+    else if (inputNumber < myRandomNumber) {
+        pageText.innerHTML = 'Demasiado bajo';
+    }
+    else {
+        pageText.innerHTML = 'Has ganado campeona!!';
+    }
     attemps = attemps + 1;
     counter.innerHTML = `Número de intentos:${attemps}`;
 }
